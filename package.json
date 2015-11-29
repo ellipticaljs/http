@@ -1,15 +1,15 @@
 {
     "name": "elliptical-http",
     "description": "Elliptical Http Library",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "S. Francis",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/tachyon1337/elliptical-http.git"
+        "url": "https://github.com/ellipticaljs/http.git"
     },
     "dependencies":{
-        "elliptical-crypto":"git+https://github.com/tachyon1337/elliptical-crypto.git"
+        "elliptical-crypto":"git+https://github.com/ellipticaljs/crypto.git"
     },
     "devDependencies": {
         "gulp": "^3.8.7",

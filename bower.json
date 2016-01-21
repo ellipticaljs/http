@@ -1,7 +1,7 @@
 {
   "name": "elliptical-http",
   "description": "Elliptical Http Library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/elliptical.http.js",
   "authors": [
     "S. Francis"

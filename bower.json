@@ -1,7 +1,7 @@
 {
   "name": "elliptical-http",
   "description": "Elliptical Http Library",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/elliptical.http.js",
   "authors": [
     "S. Francis"
@@ -42,6 +42,7 @@
     "bk"
   ],
   "dependencies": {
-    "elliptical-crypto": "~1.0.2"
+    "elliptical-crypto": "~1.0.2",
+    "jquery-extensions": "~1.0.7"
   }
 }

@@ -22,6 +22,27 @@
     }
 }(this, function ($) {
 
+    //https://gist.github.com/monsur/706839
+    var parseResponseHeaders=function(headerStr) {
+        var headers = {};
+        if (!headerStr) {
+            return headers;
+        }
+        var headerPairs = headerStr.split('\u000d\u000a');
+        for (var i = 0; i < headerPairs.length; i++) {
+            var headerPair = headerPairs[i];
+            // Can't use split() here because it does the wrong thing
+            // if the header value has the string ": " in it.
+            var index = headerPair.indexOf('\u003a\u0020');
+            if (index > 0) {
+                var key = headerPair.substring(0, index);
+                var val = headerPair.substring(index + 2);
+                headers[key] = val;
+            }
+        }
+        return headers;
+    };
+
     var browser={
         send: function (params, callback) {
             var settings = {
@@ -60,11 +81,16 @@
                 }
 
             }).fail(function (data, status, errThrown) {
-                var err={};
-                err.statusCode=data.status;
-                err.message=errThrown;
-
-                callback(err, null);
+                var err = {};
+                var _data=null;
+                err.statusCode = data.status;
+                if (data.responseJSON && data.responseJSON.message) err.message = data.responseJSON.message;
+                else if(data.responseJSON){
+                    _data=data.responseJSON;
+                    err.message=errThrown;
+                }else err.message = errThrown;
+                err.headers = parseResponseHeaders(data.getAllResponseHeaders());
+                callback(err, _data);
             });
         }
     };

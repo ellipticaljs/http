@@ -1,7 +1,7 @@
 {
     "name": "elliptical-http",
     "description": "Elliptical Http Library",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "author": "S. Francis",
     "license": "MIT",
     "repository": {

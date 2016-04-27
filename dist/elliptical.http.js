@@ -146,6 +146,14 @@
             return 'Session ' + token;
         },
 
+        encodeBasicToken: function(token){
+            return 'Basic ' + token;
+        },
+
+        encodeBasicCredentials: function(u,p){
+            return crypto.base64Encrypt(u,p);
+        },
+
         encodeOAuthToken: function(token){
             return 'OAuth ' + token;
         }

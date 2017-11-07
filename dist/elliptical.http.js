@@ -151,7 +151,7 @@
         },
 
         encodeJWTToken: function(token){
-            return 'bearer ' + token;
+            return 'Bearer ' + token;
         },
 
         encodeBasicCredentials: function(u,p){

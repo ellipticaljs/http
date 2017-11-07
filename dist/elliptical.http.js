@@ -150,6 +150,10 @@
             return 'Basic ' + token;
         },
 
+        encodeJWTToken: function(token){
+            return 'bearer ' + token;
+        },
+
         encodeBasicCredentials: function(u,p){
             return crypto.base64Encrypt(u,p);
         },
